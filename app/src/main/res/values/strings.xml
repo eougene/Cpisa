@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">健康服务管理平台</string>
+    <string name="app_exit">再按一次退出程序</string>
+    <string name="text">将目标放入框内, 即可自动扫描</string>
+    <string name="move">请移动手机获取有效的GPS数据</string>
+    <string name="hint">提示:请在5分钟内使用有效的GPS数据</string>
+    <string name="data">有效的GPS数据</string>
+
+</resources>

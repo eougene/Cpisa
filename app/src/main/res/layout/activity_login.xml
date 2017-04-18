@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/setting_bac"
+                android:orientation="vertical">
+
+    <include
+        android:id="@+id/base_head"
+        layout="@layout/base_head"/>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/longinLinear"
+        android:layout_below="@+id/base_head">
+
+        <SurfaceView
+            android:id="@+id/preview_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+        <net.dot.com.cpisa.zxing.view.ViewfinderView
+            android:id="@+id/viewfinder_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/longinLinear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_margin_40"
+        android:layout_marginTop="@dimen/activity_margin_40"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="5dp"
+            android:layout_marginBottom="@dimen/activity_margin_10"
+            android:layout_marginTop="@dimen/activity_margin_10"
+            android:background="@drawable/bg_dash_line"
+            android:layerType="software"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="扫卡登录"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/activity_tvsize_18"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+</RelativeLayout>

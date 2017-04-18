@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/setting_bac"
+        android:orientation="vertical">
+        <!--头部信息-->
+
+        <include
+            android:id="@+id/baseHeadLayout"
+            layout="@layout/base_head"/>
+
+
+        <TextView
+            android:id="@+id/nlatitudeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/activity_margin_30"
+            android:layout_marginRight="@dimen/activity_margin_10"
+            android:layout_marginTop="@dimen/activity_margin_30"
+            android:text="测试经纬度"
+            android:textSize="@dimen/activity_tvsize_18"/>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/titleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sureLinearLayout"
+        android:layout_marginBottom="@dimen/activity_tvsize_10"
+        android:layout_marginLeft="@dimen/activity_margin_30"
+        android:layout_marginRight="@dimen/activity_margin_10"
+        android:scrollbars="vertical"
+        android:text="@string/move"
+        android:textSize="@dimen/activity_tvsize_18"/>
+
+
+    <LinearLayout
+        android:id="@+id/sureLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginLeft="@dimen/activity_margin_30"
+        android:layout_marginRight="@dimen/activity_margin_30"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/sureTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_margin_10"
+            android:layout_marginRight="@dimen/activity_margin_10"
+            android:layout_marginTop="@dimen/activity_margin_20"
+            android:text="有效经纬度"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/activity_tvsize_18"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/resultTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/activity_margin_10"
+            android:layout_marginRight="@dimen/activity_margin_10"
+            android:layout_marginTop="@dimen/activity_margin_20"
+            android:gravity="center_horizontal"
+            android:text="@string/hint"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/activity_tvsize_15"/>
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginBottom="@dimen/activity_tvsize_20"
+            android:layout_marginLeft="@dimen/activity_margin_10"
+            android:layout_marginRight="@dimen/activity_margin_10"
+            android:layout_marginTop="@dimen/activity_margin_10"
+            android:gravity="center_horizontal"
+            android:scrollbars="vertical"
+            android:text="有效时间"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/activity_tvsize_18"
+            android:textStyle="bold"/>
+
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/mButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/activity_margin_20"
+        android:layout_marginLeft="@dimen/activity_margin_20"
+        android:layout_marginRight="@dimen/activity_margin_20"
+        android:background="@drawable/button_shape"
+        android:text="扫一扫"
+        android:textColor="@color/white"
+        android:textSize="@dimen/activity_tvsize_15"
+        android:visibility="gone"/>
+
+
+</RelativeLayout>
