@@ -43,6 +43,8 @@ public class CommintInfoActivity extends Activity {
                 case R.id.backImageView:
                     finish();
                     break;
+                default:
+                    break;
             }
         }
     };
