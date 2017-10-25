@@ -37,7 +37,7 @@ public final class CameraManager {
 
     private static final String TAG = CameraManager.class.getSimpleName();
 
-    private static final int MIN_FRAME_WIDTH = 240;
+    private static final int MIN_FRAME_WIDTH = 300;
     private static final int MIN_FRAME_HEIGHT = 240;
     private static final int MAX_FRAME_WIDTH = 600;
     private static final int MAX_FRAME_HEIGHT = 480;
@@ -87,9 +87,9 @@ public final class CameraManager {
     }
 
     /**
-     * Gets the CameraManager singleton instance.
+     * Gets the NewCameraManager singleton instance.
      *
-     * @return A reference to the CameraManager singleton.
+     * @return A reference to the NewCameraManager singleton.
      */
     public static CameraManager get() {
         return cameraManager;
@@ -320,7 +320,7 @@ public final class CameraManager {
      * @param data   A preview frame.
      * @param width  The width of the image.
      * @param height The height of the image.
-     * @return A PlanarYUVLuminanceSource instance.
+     * @return A NewPlanarYUVLuminanceSource instance.
      */
     public PlanarYUVLuminanceSource buildLuminanceSource(byte[] data, int width, int height) {
         Rect rect = getFramingRectInPreview();

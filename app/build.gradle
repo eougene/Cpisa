@@ -7,20 +7,51 @@ android {
         applicationId "net.dot.com.cpisa"
         minSdkVersion 14
         targetSdkVersion 22
-        versionCode 1
-        versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        versionCode 2
+        versionName "1.0.2"
     }
+
+    signingConfigs {
+        release {
+            keyAlias 'cpisa'
+            keyPassword '123456'
+            storeFile file('/Users/e-dot/Documents/e-dot/keystore/cpisa.jks')
+            storePassword '123456'
+        }
+    }
+
+
     buildTypes {
         release {
+            // release模式下，不显示log
+            buildConfigField("boolean", "LOG_DEBUG", "false")
+            // 为版本名添加后缀
+            versionNameSuffix "-relase"
+            // 不开启混淆
             minifyEnabled false
+            // 开启ZipAlign优化
+            zipAlignEnabled true
+            // 混淆文件位置
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            // debug模式下，显示log
+            buildConfigField("boolean", "LOG_DEBUG", "true")
+            // 不开启混淆
+            minifyEnabled false
+            // 不开启ZipAlign优化
+            zipAlignEnabled false
+            // 不移除无用的resource文件
+            shrinkResources false
+            signingConfig signingConfigs.release
+
+
         }
     }
 
     sourceSets {
         main {
-            jniLibs.srcDirs = ['libs']
+            jniLibs.srcDirs = ['jniLibs']
         }
     }
 }
@@ -29,13 +60,18 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
-        exclude group: 'com.android.support', module: 'support-annotations'
-    })
+    //Gson解析
+    //二维码扫描
     compile files('libs/core-3.1.0.jar')
-    compile files('libs/afinal_0.5_bin.jar')
-    compile 'com.android.support:appcompat-v7:25.1.0'
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha8'
-    testCompile 'junit:junit:4.12'
+    compile files('libs/locSDK_6.23.jar')
+    compile 'com.android.support:appcompat-v7:25.3.1'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.tencent.bugly:crashreport_upgrade:latest.release'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'io.reactivex:rxandroid:1.2.0'
+    compile 'com.jakewharton:butterknife-compiler:8.8.1'
+    compile 'com.jakewharton:butterknife:8.8.1'
 }

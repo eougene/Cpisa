@@ -1,217 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <net.dot.com.cpisa.utils.BounceScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/setting_bac"
             android:orientation="vertical">
 
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+            <LinearLayout
 
-        <include
-            android:id="@+id/base_head"
-            layout="@layout/base_head"/>
-
-        <LinearLayout
-            android:layout_marginTop="@dimen/activity_margin_20"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
+                android:layout_marginTop="@dimen/activity_margin_10"
+                android:orientation="horizontal">
 
-                android:padding="@dimen/activity_margin_10">
-
-                <TextView
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/tab_info_shape"
-                    android:drawablePadding="@dimen/activity_margin_10"
-                    android:drawableTop="@mipmap/app_icon"
-                    android:padding="@dimen/activity_margin_10"
-                    android:text="消息审核"
-                    android:textColor="@color/colorPrimary"/>
+                    android:layout_weight="1"
+                    android:padding="@dimen/activity_margin_10">
 
-            </RelativeLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_margin_20"
+                        android:background="@drawable/button_shape_g"
+                        android:drawablePadding="@dimen/activity_margin_5"
+                        android:drawableTop="@mipmap/message_1"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin_5"
+                        android:text="消息审核"
+                        android:textColor="@color/viewfinder_mask"/>
 
-            <RelativeLayout
-                android:id="@+id/changeRela"
-                android:layout_width="0dp"
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/changeRela"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/activity_margin_10">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_margin_20"
+                        android:background="@drawable/tab_info_shape"
+                        android:drawablePadding="@dimen/activity_margin_5"
+                        android:drawableTop="@mipmap/location"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin_5"
+                        android:text="修正定位"
+                        android:textColor="@color/colorPrimary"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="@dimen/activity_margin_10">
+                android:orientation="horizontal">
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <RelativeLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/tab_info_shape"
-                    android:drawablePadding="@dimen/activity_margin_10"
-                    android:drawableTop="@mipmap/app_icon"
-                    android:padding="@dimen/activity_margin_10"
-                    android:text="修正定位"
-                    android:textColor="@color/colorPrimary"/>
+                    android:layout_weight="1"
 
-            </RelativeLayout>
+                    android:padding="@dimen/activity_margin_10">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_margin_20"
+                        android:background="@drawable/button_shape_g"
+                        android:drawablePadding="@dimen/activity_margin_5"
+                        android:drawableTop="@mipmap/mens_1"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin_5"
+                        android:text="人员调整"
+                        android:textColor="@color/viewfinder_mask"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/activity_margin_10">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_margin_20"
+                        android:background="@drawable/button_shape_g"
+                        android:drawablePadding="@dimen/activity_margin_5"
+                        android:drawableTop="@mipmap/check_1"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin_5"
+                        android:text="回访巡查"
+                        android:textColor="@color/viewfinder_mask"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:padding="@dimen/activity_margin_10">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_margin_20"
+                        android:background="@drawable/button_shape_g"
+                        android:drawablePadding="@dimen/activity_margin_5"
+                        android:drawableTop="@mipmap/serve_1"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin_5"
+                        android:text="服务状态"
+                        android:textColor="@color/viewfinder_mask"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/activity_margin_10">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_margin_20"
+                        android:background="@drawable/button_shape_g"
+                        android:drawablePadding="@dimen/activity_margin_5"
+                        android:drawableTop="@mipmap/not_1"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin_5"
+                        android:text="消息巡查"
+                        android:textColor="@color/viewfinder_mask"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+
+                    android:padding="@dimen/activity_margin_10">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_margin_20"
+                        android:background="@drawable/button_shape_g"
+                        android:drawablePadding="@dimen/activity_margin_5"
+                        android:drawableTop="@mipmap/mens_1"
+                        android:gravity="center"
+                        android:padding="@dimen/activity_margin_5"
+                        android:text="人员调整"
+                        android:textColor="@color/viewfinder_mask"
+                        android:visibility="invisible"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="@dimen/activity_margin_10"
+                    android:visibility="invisible"
+                    >
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/activity_margin_20"
+                        android:background="@drawable/tab_info_shape"
+                        android:drawablePadding="@dimen/activity_margin_5"
+                        android:drawableTop="@mipmap/mens_1"
+                        android:padding="@dimen/activity_margin_5"
+                        android:text="消息审核"/>
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
 
 
         </LinearLayout>
 
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:padding="@dimen/activity_margin_10">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/tab_info_shape"
-                    android:drawablePadding="@dimen/activity_margin_10"
-                    android:drawableTop="@mipmap/app_icon"
-                    android:padding="@dimen/activity_margin_10"
-                    android:text="回访巡查"
-                    android:textColor="@color/colorPrimary"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="@dimen/activity_margin_10">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/tab_info_shape"
-                    android:drawablePadding="@dimen/activity_margin_10"
-                    android:drawableTop="@mipmap/app_icon"
-                    android:padding="@dimen/activity_margin_10"
-                    android:text="回访巡查"
-                    android:textColor="@color/colorPrimary"/>
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:padding="@dimen/activity_margin_10">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/tab_info_shape"
-                    android:drawablePadding="@dimen/activity_margin_10"
-                    android:drawableTop="@mipmap/app_icon"
-                    android:padding="@dimen/activity_margin_10"
-                    android:text="服务状态"
-                    android:textColor="@color/colorPrimary"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="@dimen/activity_margin_10">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/tab_info_shape"
-                    android:drawablePadding="@dimen/activity_margin_10"
-                    android:drawableTop="@mipmap/app_icon"
-                    android:padding="@dimen/activity_margin_10"
-                    android:text="消息巡查"
-                    android:textColor="@color/colorPrimary"/>
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-
-                android:padding="@dimen/activity_margin_10">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/tab_info_shape"
-                    android:drawablePadding="@dimen/activity_margin_10"
-                    android:drawableTop="@mipmap/app_icon"
-                    android:padding="@dimen/activity_margin_10"
-                    android:text="人员调整"
-                    android:textColor="@color/colorPrimary"/>
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:padding="@dimen/activity_margin_10"
-                android:visibility="invisible">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerHorizontal="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/tab_info_shape"
-                    android:drawablePadding="@dimen/activity_margin_10"
-                    android:drawableTop="@mipmap/app_icon"
-                    android:padding="@dimen/activity_margin_10"
-                    android:text="消息审核"/>
-
-            </RelativeLayout>
-
-
-        </LinearLayout>
-
-
-    </LinearLayout>
-</ScrollView>
+    </net.dot.com.cpisa.utils.BounceScrollView>
+</LinearLayout>

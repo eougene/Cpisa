@@ -6,4 +6,6 @@
     <string name="hint">提示:请在5分钟内使用有效的GPS数据</string>
     <string name="data">有效的GPS数据</string>
 
+    <string name="progressbar_dialog_txt">请稍后...</string>
+
 </resources>

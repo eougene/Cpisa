@@ -2,43 +2,82 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
           package="net.dot.com.cpisa">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 这个权限用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <!-- 这个权限用于访问GPS定位 -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <!-- 读取手机存储内容 -->
+    <uses-permission android:name="android.permission.READER_EXTERNAL_STORAGE"/>
+    <!-- 写入扩展存储，向扩展卡写入数据，用于写入离线定位数据 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <!-- 获取运营商信息，用于支持提供运营商信息相关的接口 -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 改变网络状态 -->
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <!-- 改变wifi状态 -->
     <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <!-- 访问网络权限 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 读取日志权限 -->
     <uses-permission android:name="android.permission.READ_LOGS"/>
+    <!-- 用于读取手机当前的状态 -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
     <uses-permission android:name="android.permission.VIBRATE"/>
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <!-- 设置 -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS"/>
     <uses-permission android:name="android.permission.FLASHLIGHT"/>
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.RESTART_PACKAGES"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
-
     <!-- 富媒体需要声明的权限 -->
     <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER"/>
     <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION"/>
     <uses-permission android:name="android.permission.EXPAND_STATUS_BAR"/>
+    <!-- 适配Android N系统必需的ContentProvider写权限声明，写权限包含应用包名 -->
+    <uses-permission android:name="baidu.push.permission.WRITE_PUSHINFOPROVIDER.net.dot.com.cpisa"/>
 
+    <!-- 向系统日历读写权限 -->
+    <uses-permission android:name="android.permission.READ_CALENDAR"/>
+    <uses-permission android:name="android.permission.WRITE_CALENDAR"/>
+    <!-- 开启摄像头权限 -->
     <uses-feature android:name="android.hardware.camera"/>
+    <!-- 开启摄像头自动对焦权限 -->
     <uses-feature android:name="android.hardware.camera.autofocus"/>
+    <!-- 更改配置权限 -->
+    <uses-permission android:name="andorid.permission.CHANGE_CONFIGURATION"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK"/>
+    <uses-permission android:name="android.permission.PACKAGE_USAGE_STATS"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.GET_TASKS"/>
+    <!-- 支持iBeancon 需要蓝牙权限 -->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!-- 浮动通知权限 -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <supports-screens
+        android:anyDensity="true"
+        android:largeScreens="true"
+        android:normalScreens="false"
+        android:resizeable="true"
+        android:smallScreens="true"/>
 
     <application
-        android:name=".activity.AndroidApplication"
+        android:name=".base.AndroidApplication"
         android:allowBackup="true"
         android:icon="@mipmap/app_icon"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/ActivtyTheme">
         <activity
-            android:name=".activity.StartActivity"
-            android:theme="@android:style/Theme.NoTitleBar.Fullscreen">
+            android:name=".view.StartActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -46,20 +85,52 @@
             </intent-filter>
         </activity>
 
-        <!-- <meta-data -->
-        <!-- android:name="com.baidu.lbsapi.API_KEY" -->
-        <!-- android:value="mORjlLW1zR14FiKGQaV89vlkbkLmYKzo" /> &lt;!&ndash; http://lbsyun.baidu.com/apiconsole/key &ndash;&gt; -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="8spAdfD2E3i82xBBFMl2NsHXPbjkAqd4"/>
+        <!-- 二维码扫描 -->
         <activity
-            android:name=".activity.MipcaActivityCapture"
+            android:name=".view.MipcaActivityCapture"
             android:configChanges="orientation|keyboardHidden"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="stateAlwaysHidden"/>
-        <activity android:name=".activity.LocationActivity"/>
-        <activity android:name=".activity.CommintInfoActivity"/>
-        <activity android:name=".activity.LoginActivity">
+
+        <!-- 获取有效的GPS值 -->
+        <activity android:name=".view.LocationActivity"/>
+
+        <!-- 更新用户信息 -->
+        <activity android:name=".view.CommintInfoActivity"/>
+
+
+        <!-- 首页用户 -->
+        <activity android:name=".view.HomeActivity"/>
+
+        <!-- 提示用户 -->
+        <activity
+            android:name=".view.DialogOptionActivity"
+            android:theme="@style/DialogStyle">
         </activity>
-        <activity android:name=".activity.HomeActivity">
-        </activity>
+
+        <!-- Bugly升级SDK配置开始 -->
+        <activity
+            android:name="com.tencent.bugly.beta.ui.BetaActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize|locale"
+            android:theme="@android:style/Theme.Translucent"/>
+
+        <!-- Bugly升级SDK配置开始 API 24以上配置 -->
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="com.tencent.bugly.hotfix.fileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
+        <!-- 登录 -->
+        <activity android:name=".view.LoginActivity"/>
+
     </application>
 
 </manifest>

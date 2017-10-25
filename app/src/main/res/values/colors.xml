@@ -6,15 +6,12 @@
 
 
     <color name="result_view">#F8B060</color>
-
     <color name="white">#FFFFFF</color>
 
 
 
     <!-- 透明-->
     <color name="transparent">#00000000</color>
-
-
     <color name="setting_bac">#EDEEEF</color>
     <color name="viewfinder_mask">#60000000</color>
     <color name="black">#000000</color>

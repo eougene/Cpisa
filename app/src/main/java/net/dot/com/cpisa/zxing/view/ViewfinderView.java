@@ -22,7 +22,6 @@ import android.graphics.Bitmap;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
-import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -33,8 +32,6 @@ import net.dot.com.cpisa.zxing.camera.CameraManager;
 
 import java.util.Collection;
 import java.util.HashSet;
-
-import static android.graphics.Color.BLACK;
 
 /**
  * This view is overlaid on top of the camera preview. It adds the viewfinder
@@ -197,11 +194,11 @@ public final class ViewfinderView extends View {
 
 
             //画扫描框下面的字
-            paint.setColor(BLACK);
-            paint.setTextSize(TEXT_SIZE * density);
+            //paint.setColor(BLACK);
+            //paint.setTextSize(TEXT_SIZE * density);
             // paint.setAlpha(0x40);
-            paint.setTypeface(Typeface.create("System", Typeface.BOLD));
-            canvas.drawText(getResources().getString(R.string.text), frame.left + 60, (float) (frame.bottom + (float) TEXT_PADDING_TOP * density), paint);
+            //paint.setTypeface(Typeface.create("System", Typeface.BOLD));
+            //canvas.drawText(getResources().getString(R.string.text), frame.left + 60, (float) (frame.bottom + (float) TEXT_PADDING_TOP * density), paint);
 
 
             Collection<ResultPoint> currentPossible = possibleResultPoints;

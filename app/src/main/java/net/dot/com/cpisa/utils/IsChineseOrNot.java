@@ -1,9 +1,5 @@
 package net.dot.com.cpisa.utils;
 
-/**
- * Created by ${bai} on 17/2/14.
- */
-
 public class IsChineseOrNot {
     public static final boolean isChineseCharacter(String chineseStr) {
         char[] charArray = chineseStr.toCharArray();
