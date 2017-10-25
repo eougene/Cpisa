@@ -13,7 +13,7 @@ import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 
 import net.dot.com.cpisa.R;
-import net.dot.com.cpisa.activity.LoginActivity;
+import net.dot.com.cpisa.view.LoginActivity;
 import net.dot.com.cpisa.zxing.camera.CameraManager;
 import net.dot.com.cpisa.zxing.camera.PlanarYUVLuminanceSource;
 

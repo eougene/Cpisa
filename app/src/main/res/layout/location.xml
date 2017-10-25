@@ -3,42 +3,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/nlatitudeTextView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/setting_bac"
-        android:orientation="vertical">
-        <!--头部信息-->
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_margin_30"
+        android:layout_marginRight="@dimen/activity_margin_10"
+        android:layout_marginTop="@dimen/activity_margin_30"
+        android:textSize="@dimen/activity_tvsize_18"/>
 
-        <include
-            android:id="@+id/baseHeadLayout"
-            layout="@layout/base_head"/>
-
-
-        <TextView
-            android:id="@+id/nlatitudeTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="@dimen/activity_margin_30"
-            android:layout_marginRight="@dimen/activity_margin_10"
-            android:layout_marginTop="@dimen/activity_margin_30"
-            android:text="测试经纬度"
-            android:textSize="@dimen/activity_tvsize_18"/>
-
-
-    </LinearLayout>
 
     <TextView
         android:id="@+id/titleTextView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_above="@+id/sureLinearLayout"
+        android:layout_centerHorizontal="true"
         android:layout_marginBottom="@dimen/activity_tvsize_10"
-        android:layout_marginLeft="@dimen/activity_margin_30"
+        android:layout_marginLeft="@dimen/activity_margin_10"
         android:layout_marginRight="@dimen/activity_margin_10"
+        android:gravity="center"
         android:scrollbars="vertical"
         android:text="@string/move"
-        android:textSize="@dimen/activity_tvsize_18"/>
+        android:textSize="@dimen/activity_tvsize_18"
+        android:textStyle="bold"/>
 
 
     <LinearLayout
@@ -49,6 +38,7 @@
         android:layout_marginLeft="@dimen/activity_margin_30"
         android:layout_marginRight="@dimen/activity_margin_30"
         android:background="@color/white"
+        android:backgroundTint="@color/setting_bac"
         android:orientation="vertical"
         android:visibility="invisible">
 

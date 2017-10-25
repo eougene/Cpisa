@@ -4,6 +4,7 @@ package net.dot.com.cpisa.utils;
  * 百度坐标（BD09），国测局坐标（火星坐标，GCJ02）和WGS84坐标系之间的转换的工具
  */
 public class CoordinateTransformUtil {
+    private static double EARTH_RADIUS = 6378137.0;
 
     static double x_pi = 3.14159265358979324 * 3000.0 / 180.0;
     // π
@@ -45,7 +46,7 @@ public class CoordinateTransformUtil {
      * @param lng 火星坐标经度
      * @param lat 火星坐标纬度
      * @return 百度坐标数组
-     * @see 谷歌、高德——>百度
+     * @see google、高德——>百度
      */
     public static double[] gcj02tobd09(double lng, double lat) {
         double z = Math.sqrt(lng * lng + lat * lat) + 0.00002
@@ -59,10 +60,10 @@ public class CoordinateTransformUtil {
     /**
      * 百度坐标系(BD-09)转火星坐标系(GCJ-02)
      *
-     * @param lng 百度坐标纬度
-     * @param lat 百度坐标经度
+     * @param bd_lon 百度坐标纬度
+     * @param bd_lat 百度坐标经度
      * @return 火星坐标数组
-     * @see 百度——>谷歌、高德
+     * @see
      */
     public static double[] bd09togcj02(double bd_lon, double bd_lat) {
         double x = bd_lon - 0.0065;
@@ -172,6 +173,29 @@ public class CoordinateTransformUtil {
             return true;
         }
         return false;
+    }
+
+    /**
+     * 单位米
+     *
+     * @param lat_a
+     * @param lng_a
+     * @param lat_b
+     * @param lng_b
+     * @return
+     */
+    public static double gps2m(double lat_a, double lng_a, double lat_b, double lng_b) {
+        double radLat1 = (lat_a * Math.PI / 180.0);
+        double radLat2 = (lat_b * Math.PI / 180.0);
+        double a = radLat1 - radLat2;
+        double b = (lng_a - lng_b) * Math.PI / 180.0;
+        double s = 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2)
+                + Math.cos(radLat1) * Math.cos(radLat2)
+                * Math.pow(Math.sin(b / 2), 2)));
+        s = s * EARTH_RADIUS;
+        s = Math.round(s * 10000) / 10000;
+
+        return s;
     }
 
 }

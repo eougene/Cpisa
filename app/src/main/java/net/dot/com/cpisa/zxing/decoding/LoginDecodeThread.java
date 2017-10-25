@@ -7,7 +7,7 @@ import com.google.zxing.BarcodeFormat;
 import com.google.zxing.DecodeHintType;
 import com.google.zxing.ResultPointCallback;
 
-import net.dot.com.cpisa.activity.LoginActivity;
+import net.dot.com.cpisa.view.LoginActivity;
 
 import java.util.Hashtable;
 import java.util.Vector;

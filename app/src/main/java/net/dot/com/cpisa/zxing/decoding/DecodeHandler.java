@@ -29,7 +29,7 @@ import com.google.zxing.Result;
 import com.google.zxing.common.HybridBinarizer;
 
 import net.dot.com.cpisa.R;
-import net.dot.com.cpisa.activity.MipcaActivityCapture;
+import net.dot.com.cpisa.view.LoginActivity;
 import net.dot.com.cpisa.zxing.camera.CameraManager;
 import net.dot.com.cpisa.zxing.camera.PlanarYUVLuminanceSource;
 
@@ -39,10 +39,10 @@ final class DecodeHandler extends Handler {
 
     private static final String TAG = DecodeHandler.class.getSimpleName();
 
-    private final MipcaActivityCapture activity;
+    private final LoginActivity activity;
     private final MultiFormatReader multiFormatReader;
 
-    DecodeHandler(MipcaActivityCapture activity, Hashtable<DecodeHintType, Object> hints) {
+    DecodeHandler(LoginActivity activity, Hashtable<DecodeHintType, Object> hints) {
         multiFormatReader = new MultiFormatReader();
         multiFormatReader.setHints(hints);
         this.activity = activity;
