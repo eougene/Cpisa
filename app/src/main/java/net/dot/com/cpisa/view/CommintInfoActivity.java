@@ -38,6 +38,8 @@ public class CommintInfoActivity extends BaseActivity<UserUpdateConract.Presente
                 case R.id.cancelButton:
                     finish();
                     break;
+                default:
+                    break;
             }
         }
     };
